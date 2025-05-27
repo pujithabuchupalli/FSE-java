@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Find Nearby Events</title>
+</head>
+<body>
+
+<h2>Locate Nearest Event</h2>
+
+<button id="findBtn">Find Nearby Events</button>
+<p id="output"></p>
+
+<script>
+  const output = document.getElementById('output');
+  const button = document.getElementById('findBtn');
+
+  button.onclick = () => {
+    if (!navigator.geolocation) {
+      output.textContent = "Geolocation is not supported by your browser.";
+      return;
+    }
+
+    output.textContent = "Locating…";
+
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const { latitude, longitude } = position.coords;
+        output.textContent = `Latitude: ${latitude.toFixed(5)}, Longitude: ${longitude.toFixed(5)}`;
+      },
+      (error) => {
+        switch(error.code) {
+          case error.PERMISSION_DENIED:
+            output.textContent = "Permission denied. Please allow location access.";
+            break;
+          case error.POSITION_UNAVAILABLE:
+            output.textContent = "Location information is unavailable.";
+            break;
+          case error.TIMEOUT:
+            output.textContent = "The request timed out. Try again.";
+            break;
+          default:
+            output.textContent = "An unknown error occurred.";
+        }
+      },
+      {
+        enableHighAccuracy: true,
+        timeout: 10000,
+        maximumAge: 0
+      }
+    );
+  };
+</script>
+
+</body>
+</html>

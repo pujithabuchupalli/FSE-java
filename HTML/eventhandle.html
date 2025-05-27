@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Simple Event Feedback</title>
+  <style>
+    #eventImage { width: 200px; cursor: pointer; }
+    #eventImage.enlarged { width: 400px; }
+    .error { color: red; }
+    .info { color: green; }
+  </style>
+</head>
+<body>
+
+  <h2>Event Feedback Form</h2>
+
+  <form id="feedbackForm">
+    <label>Phone Number:</label><br/>
+    <input type="text" id="phone" placeholder="10-digit phone" onblur="validatePhone()" /><br/>
+    <span id="phoneError" class="error"></span><br/>
+
+    <label>Select Event:</label><br/>
+    <select id="eventSelect" onchange="showFee()">
+      <option value="">--Choose--</option>
+      <option value="Music Night" data-fee="100">Music Night</option>
+      <option value="Tech Talk" data-fee="150">Tech Talk</option>
+    </select><br/>
+    <p id="feeDisplay" class="info"></p>
+
+    <label>Feedback:</label><br/>
+    <textarea id="feedback" rows="4" placeholder="Type here..." onkeyup="countChars()"></textarea><br/>
+    <p id="charCount">Characters: 0</p>
+
+    <button type="button" onclick="submitForm()">Submit</button>
+    <p id="submitMsg" class="info"></p>
+  </form>
+
+  <h3>Event Image (Double-click to enlarge)</h3>
+  <img id="eventImage" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZ4Y17_Ivc62RL9Xh2V0faWucVcw4PItgRZg&s" ondblclick="toggleImageSize()" alt="Event" />
+
+<script>
+  function validatePhone() {
+    const phone = document.getElementById('phone').value;
+    const error = document.getElementById('phoneError');
+    const pattern = /^\d{10}$/;
+    error.textContent = pattern.test(phone) ? '' : 'Invalid phone number!';
+  }
+
+  function showFee() {
+    const select = document.getElementById('eventSelect');
+    const fee = select.options[select.selectedIndex].getAttribute('data-fee');
+    document.getElementById('feeDisplay').textContent = fee ? `Fee: ₹${fee}` : '';
+  }
+
+  function countChars() {
+    const text = document.getElementById('feedback').value;
+    document.getElementById('charCount').textContent = `Characters: ${text.length}`;
+  }
+
+  function submitForm() {
+    const phoneError = document.getElementById('phoneError').textContent;
+    if (phoneError) {
+      alert('Please fix errors before submitting.');
+      return;
+    }
+    document.getElementById('submitMsg').textContent = 'Thank you for your feedback!';
+  }
+
+  function toggleImageSize() {
+    const img = document.getElementById('eventImage');
+    img.classList.toggle('enlarged');
+  }
+</script>
+
+</body>
+</html>

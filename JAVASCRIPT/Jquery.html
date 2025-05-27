@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery Event Example</title>
+  <!-- Include jQuery library -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    #eventCard {
+      display: none;
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-top: 10px;
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Community Events</h2>
+  <button id="registerBtn">Register</button>
+
+  <div id="eventCard">
+    Music Festival - 5 Seats
+  </div>
+
+  <script>
+    $(document).ready(function () {
+      $('#registerBtn').click(function () {
+        $('#eventCard').fadeIn(500).delay(2000).fadeOut(500);
+      });
+    });
+  </script>
+
+</body>
+</html>

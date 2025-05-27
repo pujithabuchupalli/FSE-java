@@ -1,0 +1,53 @@
+/* ================================
+   Navigation Menu Styling
+   ================================ */
+
+.nav-menu {
+  list-style-type: none;       /* Removes bullets */
+  list-style-position: inside;
+  padding: 0;
+  margin: 20px;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-menu li {
+  padding: 10px;
+}
+
+.nav-menu a:link {
+  color: #2c3e50;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-menu a:visited {
+  color: #7f8c8d;
+}
+
+.nav-menu a:hover {
+  color: #e74c3c;
+  text-decoration: underline;
+}
+
+.nav-menu a:active {
+  color: #3498db;
+}
+
+
+/* ================================
+   Custom To-Do List Styling
+   ================================ */
+
+.custom-list ul {
+  list-style-type: square;        /* Change bullet type */
+  list-style-position: outside;   /* Bullet outside box */
+  padding-left: 30px;
+}
+
+.custom-list li {
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+}

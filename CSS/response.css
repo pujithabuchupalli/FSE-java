@@ -1,0 +1,73 @@
+/* Base styles */
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0 5vw;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: center;
+  background-color: #3498db;
+  padding: 10px 0;
+  gap: 20px;
+}
+
+.nav-bar a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 15px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.nav-bar a:hover {
+  background-color: #2980b9;
+}
+
+.content {
+  max-width: 900px;
+  margin: 30px auto;
+  text-align: center;
+}
+
+.responsive-image {
+  width: 80vw;
+  max-width: 600px;
+  height: auto;
+  margin: 20px 0;
+}
+
+/* ================================
+   Responsive Media Query for < 768px
+   ================================ */
+
+@media (max-width: 768px) {
+  /* Stack nav links vertically */
+  .nav-bar {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+  }
+
+  /* Reduce font size */
+  body {
+    font-size: 16px;
+    padding: 0 3vw;
+  }
+
+  /* Reduce image size */
+  .responsive-image {
+    width: 95vw;
+    max-width: none;
+  }
+
+  /* Center content text */
+  .content {
+    padding: 0 10px;
+  }
+}

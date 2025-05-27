@@ -1,0 +1,46 @@
+/* ================================
+   Body Styling with Background Image and Fallback Color
+   ================================ */
+body {
+  background-color: #e0f7fa; /* Fallback color using HEX */
+  background-image: url('cityscape.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: rgba(0, 51, 102, 0.9); /* Text color using RGBA */
+  padding: 0;
+  margin: 0;
+}
+
+/* ================================
+   Header with Linear Gradient Background
+   ================================ */
+header {
+  background: linear-gradient(90deg, #0d47a1, #42a5f5); /* Blue gradient */
+  color: #ffffff;
+  padding: 40px 0;
+  text-align: center;
+}
+
+/* ================================
+   Section Header with Gradient
+   ================================ */
+.announcement h2 {
+  background: linear-gradient(45deg, #ff6f00, #ffcc80); /* Orange gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* ================================
+   Paragraph Styling with RGBA
+   ================================ */
+.announcement p {
+  color: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+}

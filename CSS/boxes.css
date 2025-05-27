@@ -1,0 +1,40 @@
+/* ================================
+   Box Model Styling for .eventCard
+   ================================ */
+
+.eventCard {
+  margin: 20px auto;
+  padding: 20px;
+  border: 2px solid #2ecc71;
+  max-width: 500px;
+  background-color: #f0fff0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ================================
+   Outline for Form Field Highlight
+   ================================ */
+
+.highlight {
+  outline: 3px solid #3498db;
+  padding: 5px;
+}
+
+/* ================================
+   Visibility vs Display
+   ================================ */
+
+.box {
+  margin: 10px;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border: 1px dashed #999;
+}
+
+.hidden-box {
+  visibility: hidden; /* Space is still reserved */
+}
+
+.none-box {
+  display: none; /* Completely removed from layout */
+}

@@ -1,0 +1,17 @@
+/* ================================
+   Multi-Column Layout for News Article
+   ================================ */
+
+.news-article {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: Georgia, serif;
+  font-size: 18px;
+  line-height: 1.6;
+
+  /* Multi-column properties */
+  column-count: 2;           /* Number of columns */
+  column-gap: 30px;          /* Space between columns */
+  column-rule: 1px solid gray; /* Vertical rule between columns */
+}
